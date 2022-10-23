@@ -21,9 +21,7 @@ Vagrant.configure("2") do |config|
     gl.vm.network "forwarded_port", guest: 80,  host: 80
     gl.vm.network "forwarded_port", guest: 443,  host: 443
 
-    gl.vm.provision "shell" do |s|
-      s.inline = "dnf install -y wget"
-    end
+    gl.vm.provision "shell", path: "install_gitlab.sh"
   end
   
   config.vm.define "jenkins.local" do |jk|
@@ -40,8 +38,6 @@ Vagrant.configure("2") do |config|
     jk.vm.network "private_network", ip: "192.168.56.11"
     jk.vm.network "forwarded_port", guest: 8080,  host: 8080
     
-    jk.vm.provision "shell" do |s|
-      s.inline = "dnf install -y wget"
-    end
+    jk.vm.provision "shell", path: "install_jenkins.sh", privileged: false
   end
 end
