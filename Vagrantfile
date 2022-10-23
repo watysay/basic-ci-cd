@@ -38,6 +38,6 @@ Vagrant.configure("2") do |config|
     jk.vm.network "private_network", ip: "192.168.56.11"
     jk.vm.network "forwarded_port", guest: 8080,  host: 8080
     
-    jk.vm.provision "shell", path: "install_jenkins.sh", privileged: false
+    jk.vm.provision "shell", path: "install_jenkins.sh"
   end
 end
