@@ -44,17 +44,4 @@ Vagrant.configure("2") do |config|
       s.inline = "dnf install -y wget"
     end
   end
-  
-    
-
 end
-
-#from /etc/gitlab/gitlab.rb : external_url 'http://gitlab.example.com'
-
-# follow https://docs.gitlab.com/ee/integration/jenkins.html
-#glpat-KrTptBzDnjsizw2VRXUV
-# follow https://plugins.jenkins.io/gitlab-plugin/
-# 11ffec609edd9428fa4f24fd908baa3661
-
-# api token de dave
-#glpat-sSengrgfjCAyi-jQ-_RP
